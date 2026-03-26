@@ -1,17 +1,14 @@
 on:
-  workflow_dispatch:
-  schedule:
-    # run every 4 hours
-    - cron: '20 */4 * * *'
-name: Excavator
+  issue_comment:
+    types: [created, edited]
+name: Issue Comment
 jobs:
-  excavate:
-    name: Excavate
+  issueCommentHandler:
+    name: IssueCommentHandler
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@main
-      - name: Excavate
+      - name: IssueCommentHandler
         uses: ScoopInstaller/GithubActions@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SKIP_UPDATED: 1

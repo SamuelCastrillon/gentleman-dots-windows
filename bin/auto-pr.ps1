@@ -1,40 +1,12 @@
 #!/usr/bin/env pwsh
-# auto-pr.ps1 - Automatically create PRs for Scoop bucket updates
 
 param(
-    [string]$BucketDir = "bucket",
-    [string]$CommitMessage = "Update manifests"
+    [String]$Dir = "$PSScriptRoot/../bucket",
+    [String]$Upstream = "SamuelCastrillon/scoop-bucket-gentle-stack:main",
+    [Parameter(ValueFromRemainingArguments)]
+    $Args
 )
 
-$ErrorActionPreference = "Stop"
-
-# Check if git repo
-if (-not (Test-Path ".git")) {
-    Write-Error "Not a git repository. Run from bucket root."
-    exit 1
-}
-
-# Check for changes
-$status = git status --porcelain
-if (-not $status) {
-    Write-Host "No changes to commit."
-    exit 0
-}
-
-# Create update branch
-$branchName = "update/$(Get-Date -Format 'yyyyMMdd-HHmmss')"
-git checkout -b $branchName
-
-# Stage all changes
-git add .
-
-# Commit
-git commit -m $CommitMessage
-
-# Push
-git push -u origin $branchName
-
-# Create PR
-gh pr create --title "[Auto] $CommitMessage" --body "Automated manifest update." --base main
-
-Write-Host "PR created successfully!"
+if (!$env:SCOOP_HOME) { $env:SCOOP_HOME = Convert-Path (scoop prefix scoop) }
+$autopr = "$env:SCOOP_HOME/bin/auto-pr.ps1"
+& $autopr -Dir $Dir -Upstream $Upstream @Args
