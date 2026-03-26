@@ -13,12 +13,12 @@ Install tools from Scoop's official buckets:
 - [main](https://github.com/ScoopInstaller/scoop/wiki/Buckets#main-bucket) - Core tools
 - [extras](https://github.com/ScoopInstaller/Extras) - Additional tools
 
-### Custom Bucket (gentleman-dots)
+### Custom Bucket (gentle-stack)
 This repository includes a custom bucket with Gentleman ecosystem tools:
 
 ```powershell
-scoop bucket add gentleman-dots https://github.com/Gentleman-Programming/gentleman-dots-windows.git
-scoop install gentleman-dots/gentle-ai gentleman-dots/engram
+scoop bucket add gentle-stack https://github.com/SamuelCastrillon/gentleman-dots-windows
+scoop install gentle-stack/gentle-ai gentle-stack/engram
 ```
 
 ## Prerequisites
@@ -68,7 +68,7 @@ irm https://raw.githubusercontent.com/SamuelCastrillon/gentleman-dots-windows/ma
 
 ## Included Tools
 
-### Gentleman Bucket (gentleman-dots)
+### Gentleman Bucket (gentle-stack)
 
 | Tool | Description |
 |------|-------------|
