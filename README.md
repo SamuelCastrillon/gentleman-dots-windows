@@ -17,7 +17,7 @@ Install tools from Scoop's official buckets:
 This repository includes a custom bucket with Gentleman ecosystem tools:
 
 ```powershell
-scoop bucket add gentle-stack https://github.com/SamuelCastrillon/gentleman-dots-windows
+scoop bucket add gentle-stack https://github.com/SamuelCastrillon/scoop-bucket-gentle-stack
 scoop install gentle-stack/gentle-ai gentle-stack/engram
 ```
 
@@ -56,14 +56,14 @@ scoop install extras/lazygit
 Clone and copy the config files:
 
 ```powershell
-git clone --depth 1 https://github.com/SamuelCastrillon/gentleman-dots-windows.git
-Copy-Item -Recurse gentleman-dots-windows/config/nvim/* $env:LOCALAPPDATA\nvim\
+git clone --depth 1 https://github.com/SamuelCastrillon/scoop-bucket-gentle-stack.git
+Copy-Item -Recurse scoop-bucket-gentle-stack/config/nvim/* $env:LOCALAPPDATA\nvim\
 ```
 
 Or use the automated installer:
 
 ```powershell
-irm https://raw.githubusercontent.com/SamuelCastrillon/gentleman-dots-windows/main/scripts/install-gentleman-dots.ps1 | iex
+irm https://raw.githubusercontent.com/SamuelCastrillon/scoop-bucket-gentle-stack/main/scripts/install-gentleman-dots.ps1 | iex
 ```
 
 ## Included Tools
@@ -91,7 +91,7 @@ irm https://raw.githubusercontent.com/SamuelCastrillon/gentleman-dots-windows/ma
 Verify your installation:
 
 ```powershell
-irm https://raw.githubusercontent.com/SamuelCastrillon/gentleman-dots-windows/main/scripts/verify-gentleman-dots.ps1 | iex
+irm https://raw.githubusercontent.com/SamuelCastrillon/scoop-bucket-gentle-stack/main/scripts/verify-gentleman-dots.ps1 | iex
 ```
 
 Expected output: All checks should show `PASS`.
@@ -170,8 +170,8 @@ Should return a Windows-style path like `C:\Users\<you>\AppData\Local\nvim`.
 Clone the repository and test locally:
 
 ```powershell
-git clone https://github.com/SamuelCastrillon/gentleman-dots-windows.git
-cd gentleman-dots-windows
+git clone https://github.com/SamuelCastrillon/scoop-bucket-gentle-stack.git
+cd scoop-bucket-gentle-stack
 
 # Run verification script
 ./scripts/verify-gentleman-dots.ps1

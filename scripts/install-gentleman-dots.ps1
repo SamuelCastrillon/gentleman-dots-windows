@@ -15,7 +15,7 @@
     3 - Tool install failed
     
 .EXAMPLE
-    irm https://raw.githubusercontent.com/SamuelCastrillon/gentleman-dots-windows/main/scripts/install-gentleman-dots.ps1 | iex
+    irm https://raw.githubusercontent.com/SamuelCastrillon/scoop-bucket-gentle-stack/main/scripts/install-gentleman-dots.ps1 | iex
 #>
 
 [CmdletBinding()]
@@ -23,7 +23,7 @@ param()
 
 $ErrorActionPreference = "Stop"
 
-$REPO_URL = "https://github.com/SamuelCastrillon/gentleman-dots-windows"
+$REPO_URL = "https://github.com/SamuelCastrillon/scoop-bucket-gentle-stack"
 $CONFIG_DIR = "$env:LOCALAPPDATA\nvim"
 
 # Tools from Scoop main bucket
