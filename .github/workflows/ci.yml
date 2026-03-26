@@ -19,8 +19,8 @@ jobs:
         with:
           go-version: '1.21'
 
-      - name: Install scoop_bucket_validator
-        run: go install github.com/gorilla/scoop-bucket-validator@latest
+      - name: Install scoop-bucket-validator
+        run: go install github.com/ScoopInstaller/scoop-bucket-validator@latest
 
       - name: Validate bucket manifests
         run: |
