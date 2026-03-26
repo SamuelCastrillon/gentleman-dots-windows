@@ -16,7 +16,10 @@
     "regex": "v([\\d.]+)-windows"
   },
   "autoupdate": {
-    "url": "https://github.com/SamuelCastrillon/Gentleman.Dots-Windows-Scoop/releases/download/v$version-windows/gentle-windows-$version-windows.zip"
+    "url": "https://github.com/SamuelCastrillon/Gentleman.Dots-Windows-Scoop/releases/download/v$version-windows/gentle-windows-$version-windows.zip",
+    "hash": {
+      "url": "https://github.com/SamuelCastrillon/Gentleman.Dots-Windows-Scoop/releases/download/v$version-windows/gentle-windows-$version-windows.zip.sha256"
+    }
   },
   "notes": "This is a fork of Gentleman.Dots for native Windows development. Install Scoop first, then run: scoop install gentle-stack/gentle-windows"
 }
